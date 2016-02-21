@@ -2,7 +2,7 @@
   "data": [{
     "val": {
       "case": "info",
-      "de": "Ich bin Lucy."
+      "de": "[info]"
     }
   }, {
     "val": {
@@ -12,17 +12,17 @@
   }, {
     "val": {
       "case": "iphone",
-      "de": "[info] iphone"
+      "de": "[iphone]"
     }
   }, {
     "val": {
       "case": "gast",
-      "de": "Marvin hat keine Freunde."
+      "de": "[remote]"
     }
   }, {
     "val": {
       "case": "danke",
-      "de": "Bitte. Hure."
+      "de": "[yw]"
     }
   }, {
     "val": {
