@@ -1,0 +1,33 @@
+{
+  "data": [{
+    "val": {
+      "case": "info",
+      "de": "Ich bin Lucy."
+    }
+  }, {
+    "val": {
+      "case": "hallo",
+      "de": "Hallo :)"
+    }
+  }, {
+    "val": {
+      "case": "iphone",
+      "de": "[info] iphone"
+    }
+  }, {
+    "val": {
+      "case": "gast",
+      "de": "Marvin hat keine Freunde."
+    }
+  }, {
+    "val": {
+      "case": "danke",
+      "de": "Bitte. Hure."
+    }
+  }, {
+    "val": {
+      "case": "whoami",
+      "de": "Who is who?"
+    }
+  }]
+}
