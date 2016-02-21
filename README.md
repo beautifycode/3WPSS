@@ -1,5 +1,5 @@
 # 3WPSS
-Creates a server for two connections (Master/Slave). Both can communicate and response to each other.
+Creates a server for two connections (Master/Slave). Both can communicate and respond to each other.
 Adobe AIR as a sending Master, a Perl Client as a listening Slave, injecting a duplicate connection to respond to Master.
 
 Built with Love, Perl 5.22 and Adobe AIR 20.
