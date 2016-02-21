@@ -1,3 +1,0 @@
-{
-  "data":["info", "hallo", "gast", "iphone", "whoami", "danke"]
-}

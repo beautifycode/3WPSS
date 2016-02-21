@@ -3,7 +3,7 @@ use strict;
 use IO::Socket;
 use Data::Dumper;
 
-my $filename = 'lookup.txt';
+my $rawDataName = "data.txt";
 
 use lib qw(..);
 use JSON qw( );
@@ -24,17 +24,15 @@ my $texts = loadTexfile();
 print STDERR "Texts loaded\n\n";
 # die "can't fork: $!" unless defined( $kidpid = fork() );
 
-print(Dumper($texts));
-
 
 while(1) {
 	$handle->recv($data, 1024);
 
 	foreach (@$texts)
 	{
-		print $data."\n";
-	      if($data eq $_."\n") {
-			system("perl tcp_returnclient.pl $_");
+		# print $data."\n";
+	      if($data eq $_->{val}->{case}."\n") {
+			system("perl tcp_returnclient.pl $_->{val}->{case}");
 	      };
 	}
 
@@ -70,8 +68,8 @@ while(1) {
 sub loadTexfile 
 {
 	my $json_text = do {
-	   open(my $json_fh, "<:encoding(UTF-8)", $filename)
-	      or die("Can't open \$filename\": $!\n");
+	   open(my $json_fh, "<:encoding(UTF-8)", $rawDataName)
+	      or die("Can't open \$rawDataName\": $!\n");
 	   local $/;
 	   <$json_fh>
 	};
