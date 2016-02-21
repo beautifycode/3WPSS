@@ -18,12 +18,12 @@ $handle = IO::Socket::INET->new(
     PeerPort => $port
   )
   or die "can't connect to port $port on $host: $!";
+  
 print STDERR "[Connected to $host:$port]\n";
 print STDERR "Loading Texts\n";
 my $texts = loadTexfile();
 print STDERR "Texts loaded\n\n";
 # die "can't fork: $!" unless defined( $kidpid = fork() );
-
 
 while(1) {
 	$handle->recv($data, 1024);
@@ -36,33 +36,8 @@ while(1) {
 	      };
 	}
 
-	# if($data eq "info\n") {
-	# 	system("perl tcp_returnclient.pl info");
-	# } 
+	print "data: $data\n";		
 
-	# if($data eq "say my name\n") {
-	# 	system("perl tcp_returnclient.pl name");
-	# } 
-
-	# if($data eq "say hello to isa\n") {
-	# 	system("perl tcp_returnclient.pl isa");
-	# } 
-
-	# if($data eq "where is my iphone?\n") {
-	# 	system("perl tcp_returnclient.pl iphone");
-	# } 
-
-	# if($data eq "hallo\n") {
-	# 	system("perl tcp_returnclient.pl hallo");
-	# }
-
-	# if($data eq "danke\n") {
-	# 	system("perl tcp_returnclient.pl danke");
-	# }
-
-	# else {
-		print "data: $data\n";		
-	# }
 }
 
 sub loadTexfile 

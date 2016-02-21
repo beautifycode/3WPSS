@@ -26,7 +26,7 @@ print STDERR "[Connected to $host:$port]\n";
 print STDERR "Loading Texts\n";
 my $texts = loadTexfile();
 print STDERR "Texts loaded\n\n";
-print(Dumper($texts));
+# print(Dumper($texts));
 # print $texts->{data}->{info}->{de};
 
 switch($arg){
@@ -56,8 +56,6 @@ sub loadTexfile
 
 	my $json = JSON->new;
 	my $data = $json->decode($json_text);
-
-
 
 	return $data->{data};
 }
