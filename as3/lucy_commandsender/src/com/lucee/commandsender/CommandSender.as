@@ -1,5 +1,4 @@
 package com.lucee.commandsender {
-	import flash.desktop.NativeProcess;
 	import flash.display.Sprite;
 	import flash.display.StageScaleMode;
 	import flash.events.KeyboardEvent;
@@ -15,7 +14,6 @@ package com.lucee.commandsender {
 		private static const HOST_PORT : uint = 7777;
 		private static const HOST_IP : String = "192.168.2.120";
 		private var pathDataSocket : Socket = new Socket();
-		private var process : NativeProcess;
 		private var userInput : TextField;
 
 		public function CommandSender() {
