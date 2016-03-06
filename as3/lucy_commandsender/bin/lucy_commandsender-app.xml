@@ -15,7 +15,7 @@
 	Using a reverse DNS-style name as the id is recommended. (Eg. com.example.ExampleApplication.) Required. -->
   <id>com.lucee.commandsender</id>
   <!-- Used as the filename for the application. Required. -->
-  <filename>lucy_commandsender</filename>
+  <filename>Lucy Sender</filename>
   <!-- The name that is displayed in the AIR application installer. 
 	May have multiple values for each language. See samples or xsd schema file. Optional. -->
   <name>Lucy Sender</name>

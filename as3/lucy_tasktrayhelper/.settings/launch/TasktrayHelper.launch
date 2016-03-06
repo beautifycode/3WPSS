@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="com.powerflasher.fdt.ui.MobileApplicationGroup">
-<stringAttribute key="ADL_DESCRIPTOR_FILE" value="bin/luc_tasktrayhelper-app.xml"/>
+<stringAttribute key="ADL_DESCRIPTOR_FILE" value="bin/lucy_tasktrayhelper-app.xml"/>
 <booleanAttribute key="ADOBE_FLASH_PLAYER_USE_EXECUTABLE" value="false"/>
 <booleanAttribute key="ADVANCED_TELEMTRY" value="false"/>
 <intAttribute key="AIR_VIEWER_CONF" value="1"/>
