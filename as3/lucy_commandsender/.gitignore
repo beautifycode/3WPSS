@@ -2,3 +2,5 @@
 /lib
 
 *.stamp
+.settings/
+.project
