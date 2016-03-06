@@ -6,7 +6,7 @@ The TaskTrayHelper is a functional toolkit based around nircmd. It connects to L
 * Open tabs in Chrome
 * See all commands: http://www.nirsoft.net/utils/nircmd.html
 
-The CommandSender is a simply tool to send commands to Lucy's Socketconnection. Similiar to the tcp_talkclient.pl but with as a standalone application.
+The CommandSender is a simple tool to send commands to Lucy's Socketconnection. Similiar to the tcp_talkclient.pl but as a standalone application.
 
 Built with Love, Perl 5.22 and Adobe AIR 20.
 
