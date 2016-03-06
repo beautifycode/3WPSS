@@ -4,3 +4,4 @@
 *.stamp
 .settings/
 .project
+.DS_Store
