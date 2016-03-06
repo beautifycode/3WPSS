@@ -15,7 +15,7 @@ package com.lucee.lucy {
 	/**
 	 * @author marvin
 	 */
-	[SWF(backgroundColor="#FFFFFF", frameRate="60", width="1280", height="720")];
+	[SWF(backgroundColor="#FFFFFF", frameRate="60", width="720", height="400")];
 	public class Lucy extends Sprite {
 		private var _contextView : ContextView;
 		private var _context : IContext;
@@ -31,9 +31,6 @@ package com.lucee.lucy {
 			_context = new Context()
 				.install(MVCSBundle)
 				.configure(LucyConfig, _contextView);
-
-			_applicationView = new ApplicationView();
-			_contextView.view.addChild(_applicationView);
 		}
 	}
 }

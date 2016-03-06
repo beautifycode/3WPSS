@@ -6,7 +6,7 @@ package com.lucee.lucy.views {
 	 */
 	public class ApplicationView extends Sprite {
 		public function ApplicationView() {
-
+			
 		}
 	}
 }
