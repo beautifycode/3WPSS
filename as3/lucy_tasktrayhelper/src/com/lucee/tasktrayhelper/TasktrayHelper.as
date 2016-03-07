@@ -36,16 +36,13 @@ package com.lucee.tasktrayhelper {
 
 		public function TasktrayHelper() {
 			MonsterDebugger.initialize(this);
-			setupTrayIcon();
+			if (!Capabilities.isDebugger) setupTrayIcon();
 			stage.scaleMode = StageScaleMode.SHOW_ALL;
 			_pathDataSocket.addEventListener(ProgressEvent.SOCKET_DATA, handleSocketData);
 			_pathDataSocket.connect(HOST_IP, HOST_PORT);
 		}
 
 		private function setupTrayIcon() : void {
-			if (Capabilities.isDebugger)
-				return;
-
 			NativeApplication.nativeApplication.autoExit = false;
 			var icon : Loader = new Loader();
 			var iconMenu : NativeMenu = new NativeMenu();
