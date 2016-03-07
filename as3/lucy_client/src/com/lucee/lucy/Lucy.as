@@ -6,7 +6,6 @@ package com.lucee.lucy {
 
 	import com.demonsters.debugger.MonsterDebugger;
 	import com.lucee.lucy.configs.LucyConfig;
-	import com.lucee.lucy.views.ApplicationView;
 
 	import flash.display.Sprite;
 	import flash.display.StageAlign;
@@ -19,8 +18,7 @@ package com.lucee.lucy {
 	public class Lucy extends Sprite {
 		private var _contextView : ContextView;
 		private var _context : IContext;
-		private var _applicationView : ApplicationView;
-
+	
 		public function Lucy() {
 			stage.scaleMode = StageScaleMode.NO_SCALE;
 			stage.align = StageAlign.TOP_LEFT;

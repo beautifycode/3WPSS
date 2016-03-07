@@ -17,7 +17,6 @@ package com.lucee.lucy.commands {
 
 		[Inject]
 		public var applicationModel : ApplicationModel;
-
 		private var _applicationView : ApplicationView;
 
 		override public function execute() : void {

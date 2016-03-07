@@ -1,4 +1,6 @@
 package com.lucee.lucy.views {
+	import com.beautifycode.helpers.Debug;
+
 	import flash.display.Sprite;
 
 	/**
@@ -6,7 +8,7 @@ package com.lucee.lucy.views {
 	 */
 	public class ApplicationView extends Sprite {
 		public function ApplicationView() {
-			
+			Debug.log("ApplicationView - Constructed.");
 		}
 	}
 }

@@ -116,7 +116,7 @@ package com.beautifycode.AIRUpdateHelper {
 				_updateFilePathLoader.removeEventListener(IOErrorEvent.IO_ERROR, _onDownloadFail);
 				try {
 					_updateFilePathLoader.close();
-				} catch(error : Error) {
+				} catch (error : Error) {
 				}
 				_updateFilePathLoader = null;
 			}
@@ -126,7 +126,7 @@ package com.beautifycode.AIRUpdateHelper {
 				_downloadLoader.removeEventListener(IOErrorEvent.IO_ERROR, _onDownloadFail);
 				try {
 					_downloadLoader.close();
-				} catch(error : Error) {
+				} catch (error : Error) {
 				}
 				_downloadLoader = null;
 			}
