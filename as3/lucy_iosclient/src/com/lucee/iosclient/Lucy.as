@@ -35,8 +35,8 @@ package com.lucee.iosclient {
 		public function Lucy() {
 			stage.scaleMode = StageScaleMode.NO_SCALE;
 			stage.align = StageAlign.TOP_LEFT;
-			
-			if(Capabilities.os.search("iPhone")>=0) {
+
+			if (Capabilities.os.search("iPhone") >= 0) {
 				isIphone = true;
 			}
 
@@ -98,7 +98,7 @@ package com.lucee.iosclient {
 		}
 
 		private function onShutDownClick(event : MouseEvent) : void {
-//			sendString("exitwin shutdown");
+			// sendString("exitwin shutdown");
 		}
 
 		private function onLightOnClick(event : MouseEvent) : void {

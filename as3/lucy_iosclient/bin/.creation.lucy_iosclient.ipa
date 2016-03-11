@@ -9,12 +9,12 @@ yes
 -storetype
 pkcs12
 -keystore
-../mb-dev.p12
+../../../mb-dev.p12
 -storepass
 w5Lip4+AnvJ/y8tD52sUfQ==
 -provisioning-profile
-../../../Downloads/Wildcard.mobileprovision
-/Users/marvin/Documents/workspace/lucy_iosclient/bin/lucy_iosclient.ipa
+../../../../../Downloads/Wildcard.mobileprovision
+/Users/marvin/Documents/workspace/lucylee/as3/lucy_iosclient/bin/lucy_iosclient.ipa
 bin/lucy_iosclient-app.xml
 -C
 bin
