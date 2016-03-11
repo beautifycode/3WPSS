@@ -5,6 +5,7 @@ package com.lucee.lucy.events {
 	 * @author marvin
 	 */
 	public class VolumeEvent extends Event {
+		public static const INCREASE_VOLUME : String = "increaseVolume";
 		public var amount : int;
 
 		// private var _amount : int;
