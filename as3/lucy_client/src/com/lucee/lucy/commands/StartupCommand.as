@@ -6,7 +6,7 @@ package com.lucee.lucy.commands {
 	import com.beautifycode.AIRUpdateHelper.AIRUpdateHelper;
 	import com.beautifycode.helpers.Debug;
 	import com.lucee.lucy.models.ApplicationModel;
-	import com.lucee.lucy.views.ApplicationView;
+	import com.lucee.lucy.views.views.ApplicationView;
 
 	/**
 	 * @author marvin

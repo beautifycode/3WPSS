@@ -23,5 +23,13 @@ package com.lucee.lucy.views.views {
 			_decVolBtn.y = 0;
 			addChild(_decVolBtn);
 		}
+
+		public function get incVolBtn() : Sprite {
+			return _incVolBtn;
+		}
+
+		public function get decVolBtn() : Sprite {
+			return _decVolBtn;
+		}
 	}
 }

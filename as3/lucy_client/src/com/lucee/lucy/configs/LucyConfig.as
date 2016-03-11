@@ -1,15 +1,16 @@
 package com.lucee.lucy.configs {
-	import com.lucee.lucy.models.ApplicationModel;
-	import robotlegs.bender.framework.api.IConfig;
 	import robotlegs.bender.extensions.eventCommandMap.api.IEventCommandMap;
 	import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
+	import robotlegs.bender.framework.api.IConfig;
 	import robotlegs.bender.framework.api.IContext;
 	import robotlegs.bender.framework.api.IInjector;
 
+	import com.lucee.lucy.SocketController;
 	import com.lucee.lucy.commands.macros.BootMacro;
 	import com.lucee.lucy.events.ApplicationEvent;
-	import com.lucee.lucy.views.ApplicationView;
+	import com.lucee.lucy.models.ApplicationModel;
 	import com.lucee.lucy.views.mediatos.ApplicationMediator;
+	import com.lucee.lucy.views.views.ApplicationView;
 
 	import flash.desktop.NativeApplication;
 	import flash.events.IEventDispatcher;
@@ -39,7 +40,10 @@ package com.lucee.lucy.configs {
 		public function configure() : void {
 			commandmap.map(ApplicationEvent.BOOT).toCommand(BootMacro);
 			injectormap.map(ApplicationModel).asSingleton();
-			
+
+			var socketController = new SocketController();
+			injectormap.map(socketController).toValue(SocketController);
+
 			mediatormap.map(ApplicationView).toMediator(ApplicationMediator);
 			context.afterInitializing(_init);
 		}
