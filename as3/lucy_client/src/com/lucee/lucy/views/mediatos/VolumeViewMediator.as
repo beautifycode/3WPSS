@@ -12,6 +12,7 @@ package com.lucee.lucy.views.mediatos {
 	public class VolumeViewMediator extends Mediator {
 		[Inject]
 		public var view : VolumeView;
+		private var volumeEvent : VolumeEvent;
 
 		override public function initialize() : void {
 			view.incVolBtn.addEventListener(MouseEvent.CLICK, onIncVolume);
@@ -23,6 +24,7 @@ package com.lucee.lucy.views.mediatos {
 
 		private function onIncVolume(event : MouseEvent) : void {
 			volumeEvent = new VolumeEvent(VolumeEvent.INCREASE_VOLUME);
+			dispatch(volumeEvent);
 		}
 	}
 }
