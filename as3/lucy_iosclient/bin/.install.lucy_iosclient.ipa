@@ -1,0 +1,8 @@
+/Users/marvin/Documents/workspace/flex_sdk_4.6/bin/adt
+-installApp
+-platform
+ios
+-device
+6
+-package
+/Users/marvin/Documents/workspace/lucy_iosclient/bin/lucy_iosclient.ipa

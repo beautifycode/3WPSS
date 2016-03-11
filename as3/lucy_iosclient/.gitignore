@@ -1,0 +1,7 @@
+/cert
+/lib
+
+*.stamp
+.settings/
+.project
+.DS_Store
