@@ -50,7 +50,9 @@ package com.lucee.iosclient {
 			_userInputTextField.border = true;
 			_userInputTextField.type = TextFieldType.INPUT;
 			_userInputTextField.addEventListener(KeyboardEvent.KEY_DOWN, onKeyHandler);
-			// addChild(_userInputTextField);
+			_userInputTextField.x = 300;
+			_userInputTextField.y = 300;
+			addChild(_userInputTextField);
 
 			incVolBtn = new PushButton();
 			incVolBtn.height = 100;
