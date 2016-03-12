@@ -1,4 +1,4 @@
-package com.lucee.lucy {
+package com.lucee.lucy.controller {
 	import com.lucee.lucy.events.SocketDataEvent;
 	/**
 	 * @author marvin
