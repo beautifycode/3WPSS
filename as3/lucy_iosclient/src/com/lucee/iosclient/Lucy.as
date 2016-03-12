@@ -51,7 +51,7 @@ package com.lucee.iosclient {
 			_userInputTextField.type = TextFieldType.INPUT;
 			_userInputTextField.addEventListener(KeyboardEvent.KEY_DOWN, onKeyHandler);
 			_userInputTextField.x = 300;
-			_userInputTextField.y = 300;
+			_userInputTextField.y = 500;
 			addChild(_userInputTextField);
 
 			incVolBtn = new PushButton();
