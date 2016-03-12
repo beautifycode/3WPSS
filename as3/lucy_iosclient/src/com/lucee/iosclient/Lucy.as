@@ -21,7 +21,6 @@ package com.lucee.iosclient {
 	public class Lucy extends Sprite {
 		private static const HOST_PORT : uint = 7777;
 		private static const HOST_IP : String = "192.168.2.120";
-
 		private var _pathDataSocket : Socket = new Socket();
 		private var _userInputTextField : TextField;
 		private var incVolBtn : PushButton;
@@ -91,30 +90,29 @@ package com.lucee.iosclient {
 			_appContainer.addChild(lightOffBtn);
 			_appContainer.addChild(shutDownBtn);
 
-			trace('stage.stageWidth: ' + (stage.stageWidth));
-			trace('_appContainer.width: ' + (_appContainer.width));
 			_appContainer.width = stage.stageWidth;
 			_appContainer.scaleY = _appContainer.scaleX;
 
 			addChild(_appContainer);
 		}
 
-		private function onShutDownClick(event : MouseEvent) : void {
-			// sendString("exitwin shutdown");
-		}
 
 		private function onLightOnClick(event : MouseEvent) : void {
-			var ur : URLRequest = new URLRequest("http://192.168.2.125:8083/fhem?cmd=set%20st1%20on");
+			var ur : URLRequest = new URLRequest("http://" + HOST_IP + ":8083/fhem?cmd=set%20st1%20on");
 			ur.method = URLRequestMethod.GET;
 			var url : URLLoader = new URLLoader();
 			url.load(ur);
 		}
 
 		private function onLightOffClick(event : MouseEvent) : void {
-			var ur : URLRequest = new URLRequest("http://192.168.2.125:8083/fhem?cmd=set%20st1%20off");
+			var ur : URLRequest = new URLRequest("http://" + HOST_IP + ":8083/fhem?cmd=set%20st1%20off");
 			ur.method = URLRequestMethod.GET;
 			var url : URLLoader = new URLLoader();
 			url.load(ur);
+		}
+		
+		private function onShutDownClick(event : MouseEvent) : void {
+			sendString("exitwin shutdown");
 		}
 
 		private function onDecClick(event : MouseEvent) : void {
