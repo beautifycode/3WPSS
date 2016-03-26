@@ -64,7 +64,7 @@ package com.lucee.iosclient.views.views {
 
 		public function showDevices() : void {
 			_mainMenuView.hide();
-			_deviceView.show(2);
+			_deviceView.show(.7);
 			_headerView.show();
 		}
 	}

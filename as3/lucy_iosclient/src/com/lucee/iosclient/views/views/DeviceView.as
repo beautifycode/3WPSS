@@ -3,6 +3,7 @@ package com.lucee.iosclient.views.views {
 	import com.greensock.easing.Strong;
 	import com.lucee.iosclient.models.AnimationModel;
 	import com.lucee.iosclient.views.views.components.DeviceMenuButton;
+	import com.lucee.iosclient.views.views.components.ScrollableList;
 
 	import flash.display.Sprite;
 
@@ -16,6 +17,7 @@ package com.lucee.iosclient.views.views {
 		private var _hueDevice : DeviceMenuButton;
 		private var _ledStripeDevice : DeviceMenuButton;
 		private var _deviceList : Sprite;
+		private var _scrollableList : ScrollableList;
 
 		public function DeviceView() {
 			_deviceList = new Sprite();
@@ -48,19 +50,26 @@ package com.lucee.iosclient.views.views {
 			_devices.push(_ledStripeDevice);
 			_devices.push(_stehlampeDevice);
 
-			for (var i : int; i < _devices.length; i++) {
-				_devices[i].y = 200 + (i * 160);
-				_devices[i].origY = 200 + (i * 160);
+			for (var i : int; i < 10; i++) {
+				var tD : DeviceMenuButton = new DeviceMenuButton();
+				tD.title = i + "";
+
+				_devices.push(tD);
+
+				_devices[i].y = 40 + (i * 160);
+				_devices[i].origY = 40 + (i * 160);
 				_devices[i].alpha = 0;
 				_deviceList.addChild(_devices[i]);
 			}
-			
-			addChild(_deviceList);
+
+			_scrollableList = new ScrollableList(_deviceList, 170);
+			_scrollableList.y = 150;
+			addChild(_scrollableList);
 		}
 
-		public function show(initialDelay : int) : void {
+		public function show(initialDelay : Number) : void {
 			for (var i : int; i < _devices.length; i++) {
-				TweenLite.to(_devices[i], AnimationModel.FADE_IN_TIME, {y:_devices[i].origY - 20, autoAlpha:1, ease:Strong.easeOut, delay:initialDelay * (i / 4)});
+				TweenLite.to(_devices[i], AnimationModel.FADE_IN_TIME - .5, {y:_devices[i].origY - 20, autoAlpha:1, ease:Strong.easeOut, delay:initialDelay + (i / 10)});
 			}
 		}
 

@@ -1,7 +1,7 @@
 package com.lucee.iosclient.views.views {
 	import com.greensock.TweenLite;
 	import com.greensock.easing.Strong;
-	import com.lucee.iosclient.views.views.components.DefaultTextfield;
+	import com.lucee.iosclient.views.views.components.textfields.TitleTextfield;
 
 	import flash.display.Bitmap;
 	import flash.display.Sprite;
@@ -14,7 +14,7 @@ package com.lucee.iosclient.views.views {
 		private var _headerHeight : int = 150;
 		private var _backButton : Sprite;
 		private var _backButtonBitmap : Bitmap;
-		private var _title : DefaultTextfield;
+		private var _title : TitleTextfield;
 
 		public function IPhoneHeaderView() {
 			_background = new Sprite();
@@ -32,10 +32,9 @@ package com.lucee.iosclient.views.views {
 			_backButton.addChild(_backButtonBitmap);
 			_backButton.width = _backButton.height = 80;
 
-			_title = new DefaultTextfield();
+			_title = new TitleTextfield();
 			_title.setText("DEVICES");
-			_title.setHeaderStyle();
-			_title.y = 58;
+			_title.y = 60;
 			_title.alpha = 0;
 
 			addChild(_background);
@@ -51,7 +50,7 @@ package com.lucee.iosclient.views.views {
 
 		public function show() : void {
 			TweenLite.to(_backButton, .25, {x:20, alpha:1, delay:.75});
-			TweenLite.to(_title, 1, {alpha:1, y:64, delay:.55});
+			TweenLite.to(_title, 1, {alpha:1, y:68, delay:.55});
 			TweenLite.to(_background, 1, {y:0, onComplete:showBackAndTitle, ease:Strong.easeOut});
 		}
 

@@ -50,7 +50,7 @@ package com.lucee.iosclient.views.views {
 		public function hide() : void {
 			TweenLite.to(_presetsButton, AnimationModel.FADE_OUT_TIME, {y:"-20", autoAlpha:0, ease:Strong.easeIn});
 			TweenLite.to(_timersButton, AnimationModel.FADE_OUT_TIME, {y:"-20", autoAlpha:0, ease:Strong.easeIn, delay:AnimationModel.ITEM_FADEOUT_OFFSET_DELAY});
-			TweenLite.to(_devicesButton, AnimationModel.FADE_OUT_TIME, {y:"-20", autoAlpha:0, ease:Strong.easeIn, delay:AnimationModel.ITEM_FADEOUT_OFFSET_DELAY * 1.5, onComplete:repositionItems});
+			TweenLite.to(_devicesButton, AnimationModel.FADE_OUT_TIME, {y:"-20", autoAlpha:0, ease:Strong.easeIn, delay:AnimationModel.ITEM_FADEOUT_OFFSET_DELAY * 1.25, onComplete:repositionItems});
 		}
 
 		public function get devicesButton() : MainMenuButton {

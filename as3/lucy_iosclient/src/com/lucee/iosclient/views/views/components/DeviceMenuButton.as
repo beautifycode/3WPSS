@@ -1,4 +1,7 @@
 package com.lucee.iosclient.views.views.components {
+	import com.lucee.iosclient.views.views.components.textfields.DeviceDescriptionTextfield;
+	import com.lucee.iosclient.views.views.components.textfields.DeviceNameTextfield;
+
 	import flash.display.Bitmap;
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
@@ -10,12 +13,12 @@ package com.lucee.iosclient.views.views.components {
 	 * @author marvin
 	 */
 	public class DeviceMenuButton extends Sprite {
-		private var _itemName : DefaultTextfield;
+		private var _itemName : DeviceNameTextfield;
 		private var _title : String;
 		private var _lampOnAsset : Sprite;
 		private var _lampOffAsset : Sprite;
 		private var _background : Sprite;
-		private var _itemStatus : DefaultTextfield;
+		private var _itemStatus : DeviceDescriptionTextfield;
 		private var _state : *;
 		private var _lampOffAssetBitmap : Bitmap;
 		private var _lampOnAssetBitmap : Bitmap;
@@ -28,15 +31,13 @@ package com.lucee.iosclient.views.views.components {
 			_background.graphics.beginFill(0x000000, .3);
 			_background.graphics.drawRect(0, 0, 768, 140);
 
-			_itemName = new DefaultTextfield();
+			_itemName = new DeviceNameTextfield();
 			_itemName.y = 20;
 			_itemName.setText("---");
-			_itemName.setLeftStyle();
 
-			_itemStatus = new DefaultTextfield();
+			_itemStatus = new DeviceDescriptionTextfield();
 			_itemStatus.y = 20;
 			_itemStatus.setText("---");
-			_itemStatus.setDescStyle();
 
 			_lampOnAssetBitmap = new Bitmap(new AssetDeviceLampOn());
 			_lampOnAsset = new Sprite();

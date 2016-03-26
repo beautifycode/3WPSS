@@ -1,4 +1,5 @@
 package com.lucee.iosclient {
+	import com.greensock.plugins.ThrowPropsPlugin;
 	import robotlegs.bender.bundles.mvcs.MVCSBundle;
 	import robotlegs.bender.extensions.contextView.ContextView;
 	import robotlegs.bender.framework.api.IContext;
@@ -20,7 +21,7 @@ package com.lucee.iosclient {
 	public class Lucy extends Sprite {
 		private var _contextView : ContextView;
 		private var _context : IContext;
-		TweenPlugin.activate([AutoAlphaPlugin]);
+		TweenPlugin.activate([AutoAlphaPlugin,ThrowPropsPlugin]);
 		public function Lucy() {
 			stage.scaleMode = StageScaleMode.NO_SCALE;
 			stage.align = StageAlign.TOP_LEFT;
