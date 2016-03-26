@@ -24,7 +24,7 @@ package com.lucee.tasktrayhelper {
 	 */
 	public class TasktrayHelper extends Sprite {
 		private static const HOST_PORT : uint = 7777;
-		private static const HOST_IP : String = "192.168.2.120";
+		private static const HOST_IP : String = "192.168.2.125";
 		private var _pathDataSocket : Socket = new Socket();
 		private var _process : NativeProcess;
 		private var _processInfo : NativeProcessStartupInfo;
