@@ -25,6 +25,7 @@ package com.lucee.iosclient.views.views.components {
 		private var _onReq : String;
 		private var _offReq : String;
 		public var origY : Number;
+		public var origX : Number;
 
 		public function DeviceMenuButton() {
 			_background = new Sprite();
@@ -69,6 +70,7 @@ package com.lucee.iosclient.views.views.components {
 
 		private function onLampOffClick(event : MouseEvent) : void {
 			var ur : URLRequest = new URLRequest(_offReq);
+			trace('_offReq: ' + (_offReq));
 			ur.method = URLRequestMethod.GET;
 			var url : URLLoader = new URLLoader();
 			url.load(ur);

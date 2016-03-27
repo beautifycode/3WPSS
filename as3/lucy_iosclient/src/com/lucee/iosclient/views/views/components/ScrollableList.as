@@ -34,20 +34,20 @@ package com.lucee.iosclient.views.views.components {
 		private var touchTimer : Timer;
 		private var bgSpr : Sprite;
 
-		public function ScrollableList(s : Sprite, offset:int) {
+		public function ScrollableList(s : Sprite, offset : int, negOffset : int) {
 			scrollList = s;
-			
-			bounds = new Rectangle(0, 0, 750, 1334-offset);
+
+			bounds = new Rectangle(0, 0, 750, 1334 - offset - negOffset);
 			bgSpr = new Sprite();
 			bgSpr.graphics.beginFill(0xFF0000);
 			bgSpr.graphics.drawRect(0, 0, 750, 1334);
 
-//			scrollList.addChildAt(bgSpr,0);
+			// scrollList.addChildAt(bgSpr,0);
 			addChild(scrollList);
 
 			scrollMask = new Shape();
 			scrollMask.graphics.beginFill(0xFF0033, 1);
-			scrollMask.graphics.drawRect(bounds.x, bounds.y, bounds.width, bounds.height);
+			scrollMask.graphics.drawRect(bounds.x, bounds.y, bounds.width, bounds.height + negOffset);
 			scrollMask.graphics.endFill();
 			scrollList.parent.addChild(scrollMask);
 			scrollList.mask = scrollMask;
@@ -99,7 +99,7 @@ package com.lucee.iosclient.views.views.components {
 
 			// test for finger location. If we drag outside the bounds, dispatch a mouse up event.
 			if (this.mouseY < scrollMask.y || this.mouseY > bounds.height + scrollMask.y || this.mouseX < scrollMask.x || this.mouseX > bounds.width + scrollMask.x) {
-			scrollList.stage.dispatchEvent(new MouseEvent(MouseEvent.MOUSE_UP));
+				scrollList.stage.dispatchEvent(new MouseEvent(MouseEvent.MOUSE_UP));
 			}
 
 			// we need to update the scrollbar when dragging
@@ -156,22 +156,22 @@ package com.lucee.iosclient.views.views.components {
 		}
 
 		function updateBar() : void {
-//			scrollBar.y = (scrollList.y / listEndY) * barMaxDistance;
-//
-//			if (scrollBar.y > barMaxDistance) {
-//				refreshScrollBar(scrollBarHeight - ((scrollBar.y + scrollBarHeight) - scrollMask.height));
-//			}
-//
-//			// pulling down
-//			if (scrollBar.y < 1) {
-//				scrollBar.y = 0;
-//				refreshScrollBar(scrollBarHeight - (scrollList.y / 2));
-//			}
+			// scrollBar.y = (scrollList.y / listEndY) * barMaxDistance;
+			//
+		// if (scrollBar.y > barMaxDistance) {
+		// refreshScrollBar(scrollBarHeight - ((scrollBar.y + scrollBarHeight) - scrollMask.height));
+		// }
+		//
+		// // pulling down
+		// if (scrollBar.y < 1) {
+		// scrollBar.y = 0;
+		// refreshScrollBar(scrollBarHeight - (scrollList.y / 2));
+		// }
 		}
 
 		function stoppedMoving() : void {
-//			TweenMax.killTweensOf(scrollBar);
-//			TweenMax.to(scrollBar, .5, {alpha:0});
+			// TweenMax.killTweensOf(scrollBar);
+			// TweenMax.to(scrollBar, .5, {alpha:0});
 			isMoving = false;
 		}
 	}

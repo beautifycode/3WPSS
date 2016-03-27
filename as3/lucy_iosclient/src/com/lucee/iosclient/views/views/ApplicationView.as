@@ -1,5 +1,6 @@
 package com.lucee.iosclient.views.views {
 	import flash.display.Sprite;
+	import flash.events.TransformGestureEvent;
 	import flash.utils.setTimeout;
 
 	/**
@@ -34,8 +35,22 @@ package com.lucee.iosclient.views.views {
 			addChild(_deviceView);
 			addChild(_headerView);
 			// addChild(_oldInterface);
-			
+
 			showBootScreen();
+			enableSwipe();
+		}
+
+		private function enableSwipe() : void {
+			addEventListener(TransformGestureEvent.GESTURE_SWIPE, onSwipe);
+
+
+		}
+
+		private function onSwipe(event : TransformGestureEvent) : void {
+			if (event.offsetX == 1) {
+				// User swiped towards right
+				showMainMenu(true);
+			}
 		}
 
 		private function showBootScreen() : void {
@@ -43,14 +58,14 @@ package com.lucee.iosclient.views.views {
 			setTimeout(showMainMenu, 1000);
 		}
 
-		public function showMainMenu() : void {
+		public function showMainMenu(bySwipe:Boolean=false) : void {
 			_bootView.hide();
 			_presetView.hide();
-			_deviceView.hide();
-//			_timersView.hide();
+			_deviceView.hideBySwipe();
+			// _timersView.hide();
 			_headerView.hide();
 			_mainMenuView.show(1);
-			
+
 		}
 
 		public function showPresets() : void {

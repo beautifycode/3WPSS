@@ -1,8 +1,8 @@
-D:\workspace_as3\air-sdk\bin\adt.bat
+/Users/marvin/Documents/workspace/flex_sdk_4.6/bin/adt
 -installApp
 -platform
 ios
 -device
-8
+12
 -package
-D:/workspace_as3/lucylee/as3/lucy_iosclient/bin/lucy_iosclient.ipa
+/Users/marvin/Documents/workspace/lucylee/as3/lucy_iosclient/bin/lucy_iosclient.ipa

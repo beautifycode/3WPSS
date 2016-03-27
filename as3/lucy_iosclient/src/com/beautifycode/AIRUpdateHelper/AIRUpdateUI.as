@@ -17,7 +17,7 @@ package com.beautifycode.AIRUpdateHelper {
 		private static var _uiWindow : NativeWindow;
 		private static var _changeLogTextArea : TextArea;
 		private static var _uiWindowOptions : NativeWindowInitOptions;
-		private static var _uiContainer : UIContainer;
+//		private static var _uiContainer : UIContainer;
 
 		public function AIRUpdateUI() {
 		}
@@ -32,31 +32,31 @@ package com.beautifycode.AIRUpdateHelper {
 			_changeLogTextArea.text = changeLog;
 
 			if (currentVersion == null) currentVersion = "x";
-			_uiContainer = new UIContainer();
-			_uiContainer.appNameTF.text = appName;
-			_uiContainer.currentVersionTF.text = currentVersion;
-			_uiContainer.availableVersionTF.text = availableVersion;
-			_uiContainer.addChild(_changeLogTextArea);
-
-			_uiContainer.confirmBtn.addEventListener(MouseEvent.CLICK, confirmHandler);
-			_uiContainer.skipBtn.addEventListener(MouseEvent.CLICK, skipHandler);
-
-			_uiWindowOptions = new NativeWindowInitOptions();
-			_uiWindowOptions.type = NativeWindowType.NORMAL;
-			_uiWindowOptions.resizable = false;
-			_uiWindowOptions.maximizable = false;
-
-			_uiWindow = new NativeWindow(_uiWindowOptions);
-			_uiWindow.minSize = new Point(530, 365);
-			_uiWindow.width = 530;
-			_uiWindow.height = 365;
-			_uiWindow.title = "Update for " + appName + " available!";
-
-			_uiWindow.stage.scaleMode = StageScaleMode.NO_SCALE;
-			_uiWindow.stage.align = StageAlign.TOP_LEFT;
-			_uiWindow.stage.addChild(_uiContainer);
-			_uiWindow.activate();
-			_uiWindow.orderToFront();
+//			_uiContainer = new UIContainer();
+//			_uiContainer.appNameTF.text = appName;
+//			_uiContainer.currentVersionTF.text = currentVersion;
+//			_uiContainer.availableVersionTF.text = availableVersion;
+//			_uiContainer.addChild(_changeLogTextArea);
+//
+//			_uiContainer.confirmBtn.addEventListener(MouseEvent.CLICK, confirmHandler);
+//			_uiContainer.skipBtn.addEventListener(MouseEvent.CLICK, skipHandler);
+//
+//			_uiWindowOptions = new NativeWindowInitOptions();
+//			_uiWindowOptions.type = NativeWindowType.NORMAL;
+//			_uiWindowOptions.resizable = false;
+//			_uiWindowOptions.maximizable = false;
+//
+//			_uiWindow = new NativeWindow(_uiWindowOptions);
+//			_uiWindow.minSize = new Point(530, 365);
+//			_uiWindow.width = 530;
+//			_uiWindow.height = 365;
+//			_uiWindow.title = "Update for " + appName + " available!";
+//
+//			_uiWindow.stage.scaleMode = StageScaleMode.NO_SCALE;
+//			_uiWindow.stage.align = StageAlign.TOP_LEFT;
+//			_uiWindow.stage.addChild(_uiContainer);
+//			_uiWindow.activate();
+//			_uiWindow.orderToFront();
 		}
 
 		public static function createForceUpdateDialog(appName : String, currentVersion : String, availableVersion : String, changeLog : String, confirmHandler : Function) : void {

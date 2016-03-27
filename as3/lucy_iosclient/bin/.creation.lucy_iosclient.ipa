@@ -1,4 +1,4 @@
-D:\workspace_as3\air-sdk\bin\adt.bat
+/Users/marvin/Documents/workspace/flex_sdk_4.6/bin/adt
 -package
 -target
 ipa-test
@@ -11,8 +11,8 @@ pkcs12
 -storepass
 w5Lip4+AnvJ/y8tD52sUfQ==
 -provisioning-profile
-../../../Wildcard.mobileprovision
-D:/workspace_as3/lucylee/as3/lucy_iosclient/bin/lucy_iosclient.ipa
+../../../../../Downloads/Wildcard.mobileprovision
+/Users/marvin/Documents/workspace/lucylee/as3/lucy_iosclient/bin/lucy_iosclient.ipa
 bin/lucy_iosclient-app.xml
 -C
 bin

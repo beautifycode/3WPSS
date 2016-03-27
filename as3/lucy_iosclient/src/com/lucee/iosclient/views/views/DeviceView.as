@@ -27,11 +27,11 @@ package com.lucee.iosclient.views.views {
 			_stehlampeDevice.setOnReq("http://192.168.2.137:8083/fhem?cmd=set%20Stehlampe%20on");
 			_stehlampeDevice.setOffReq("http://192.168.2.137:8083/fhem?cmd=set%20Stehlampe%20off");
 
-			_ledStripeDevice = new DeviceMenuButton();
-			_ledStripeDevice.title = "KUGELLAMPE";
-			_ledStripeDevice.state = "OFF";
-			_ledStripeDevice.setOnReq("http://192.168.2.137:8083/fhem?cmd=set%Kugellampe%20on");
-			_ledStripeDevice.setOffReq("http://192.168.2.137:8083/fhem?cmd=set%Kugellampe%20off");
+			_kugellampeDevice = new DeviceMenuButton();
+			_kugellampeDevice.title = "KUGELLAMPE";
+			_kugellampeDevice.state = "OFF";
+			_kugellampeDevice.setOnReq("http://192.168.2.137:8083/fhem?cmd=set%Kugellampe%20on");
+			_kugellampeDevice.setOffReq("http://192.168.2.137:8083/fhem?cmd=set%Kugellampe%20off");
 
 			_hueDevice = new DeviceMenuButton();
 			_hueDevice.title = "STEHLAMPE";
@@ -39,30 +39,31 @@ package com.lucee.iosclient.views.views {
 			_hueDevice.setOnReq("http://192.168.2.137:8083/fhem?cmd=set%20Stehlampe%20on");
 			_hueDevice.setOffReq("http://192.168.2.137:8083/fhem?cmd=set%20Stehlampe%20off");
 
-			_kugellampeDevice = new DeviceMenuButton();
-			_kugellampeDevice.title = "STEHLAMPE";
-			_kugellampeDevice.state = "OFF";
-			_kugellampeDevice.setOnReq("http://192.168.2.137:8083/fhem?cmd=set%20Stehlampe%20on");
-			_kugellampeDevice.setOffReq("http://192.168.2.137:8083/fhem?cmd=set%20Stehlampe%20off");
+			_ledStripeDevice = new DeviceMenuButton();
+			_ledStripeDevice.title = "LED";
+			_ledStripeDevice.state = "OFF";
+			_ledStripeDevice.setOnReq("http://192.168.2.137:8083/fhem?cmd=set%20Stehlampe%20on");
+			_ledStripeDevice.setOffReq("http://192.168.2.137:8083/fhem?cmd=set%20Stehlampe%20off");
 
+			_devices.push(_stehlampeDevice);
 			_devices.push(_kugellampeDevice);
 			_devices.push(_hueDevice);
 			_devices.push(_ledStripeDevice);
-			_devices.push(_stehlampeDevice);
 
-			for (var i : int; i < 10; i++) {
+			for (var i : int; i < 100; i++) {
 				var tD : DeviceMenuButton = new DeviceMenuButton();
 				tD.title = i + "";
 
 				_devices.push(tD);
 
 				_devices[i].y = 40 + (i * 160);
+				_devices[i].origX = 0;
 				_devices[i].origY = 40 + (i * 160);
 				_devices[i].alpha = 0;
 				_deviceList.addChild(_devices[i]);
 			}
 
-			_scrollableList = new ScrollableList(_deviceList, 170);
+			_scrollableList = new ScrollableList(_deviceList, 170, 40);
 			_scrollableList.y = 150;
 			addChild(_scrollableList);
 		}
@@ -81,10 +82,17 @@ package com.lucee.iosclient.views.views {
 
 		private function repositionItems(item : DeviceMenuButton) : void {
 			item.y = item.origY;
+			item.x = item.origX;
 		}
 
 		public function get stehlampeDevice() : DeviceMenuButton {
 			return _stehlampeDevice;
+		}
+
+		public function hideBySwipe() : void {
+			for (var i : int; i < _devices.length; i++) {
+				TweenLite.to(_devices[i], AnimationModel.FADE_OUT_TIME, {x:750, autoAlpha:0, ease:Strong.easeIn, delay:(i / 6), onComplete:repositionItems, onCompleteParams:[_devices[i]]});
+			}
 		}
 	}
 }
